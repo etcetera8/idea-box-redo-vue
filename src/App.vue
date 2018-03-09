@@ -1,12 +1,17 @@
+
 <template>
   <div id="app">
+    <controller></controller>
     <router-view/>
   </div>
 </template>
 
 <script>
+import Controller from '@/components/Controller'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {'controller': Controller}
 }
 </script>
 
