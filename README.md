@@ -1,7 +1,7 @@
 # idea-box-redo-vue
 
 > A Vue.js project
-
+Building a simple to-do list project in order to learn Vue js and keep my skills fresh.
 ## Build Setup
 
 ``` bash
