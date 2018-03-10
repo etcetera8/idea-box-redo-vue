@@ -7,35 +7,35 @@
 </template>
 
 <script>
-import Controller from '@/components/Controller'
-import IdeaList from '@/components/IdeaList'
-export default {
-  name: 'App',
-  components: {
-    'controller': Controller,
-    'idea-list': IdeaList
-    },
+  import Controller from '@/components/Controller'
+  import IdeaList from '@/components/IdeaList'
+  export default {
+    name: 'App',
+    components: {
+      'controller': Controller,
+      'idea-list': IdeaList
+      },
 
-  data() {
-    return {
-      ideas: [
-        {
-          title: 'one',
-          idea: 'Do things'
-        },
-        {
-          title: 'two',
-          idea: 'do more things'
-        }
-      ]
-    }
-  },
-  methods: {
-    addIdea(idea) {
-      this.ideas.push(idea)
+    data() {
+      return {
+        ideas: [
+          {
+            title: 'one',
+            idea: 'Do things'
+          },
+          {
+            title: 'two',
+            idea: 'do more things'
+          }
+        ]
+      }
+    },
+    methods: {
+      addIdea(idea) {
+        this.ideas.push(idea)
+      }
     }
   }
-}
 </script>
 
 <style>

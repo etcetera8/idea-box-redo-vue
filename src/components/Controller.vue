@@ -27,8 +27,8 @@ export default {
         //   ideaText
         // })
         const idea = {title: ideaTitle, idea: ideaText}
-        console.log(idea);
-        
+        this.ideaTitle = ''
+        this.ideaText = ''
         this.addIdea(idea)
       }
     }
