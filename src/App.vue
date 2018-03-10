@@ -1,7 +1,7 @@
 
 <template>
   <div id="app">
-    <controller></controller>
+    <controller v-bind:add-idea="addIdea"></controller>
     <idea-list v-bind:ideas="ideas"></idea-list>
   </div>
 </template>
@@ -28,6 +28,11 @@ export default {
           idea: 'do more things'
         }
       ]
+    }
+  },
+  methods: {
+    addIdea(idea) {
+      this.ideas.push(idea)
     }
   }
 }

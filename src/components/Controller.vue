@@ -21,13 +21,18 @@ export default {
   methods: {
     sendForm(){
       if (this.ideaTitle.length > 0 && this.ideaText.length > 0) {
-        const {titleText, ideaText} = this
-        this.$emit('create-idea', {
-          titleText,
-          ideaText
-        })
+        const {ideaTitle, ideaText} = this
+        // this.$emit('create-idea', {
+        //   titleText,
+        //   ideaText
+        // })
+        const idea = {title: ideaTitle, idea: ideaText}
+        console.log(idea);
+        
+        this.addIdea(idea)
       }
     }
-  }
+  },
+  props: ["addIdea"]
 }
 </script>
