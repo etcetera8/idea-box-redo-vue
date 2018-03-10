@@ -1,9 +1,7 @@
 <template>
   <form>
-    <label>Idea</label>
-    <input v-model="ideaTitle" type="text" ref="Idea" defaultValue="">
-    <label>Details</label>
-    <input v-model="ideaText" type="text" ref="details" defaultValue="">
+    <input v-model="ideaTitle" placeholder="Idea Title" type="text" ref="Idea" defaultValue="">
+    <input v-model="ideaText" placeholder="Idea body" type="text" ref="details" defaultValue="">
     <button class="add-idea" v-on:click="sendForm()">
       Commit
     </button>
@@ -36,3 +34,18 @@ export default {
   props: ["addIdea"]
 }
 </script>
+
+<style>
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
+  input, button {
+    width: 200px;
+    margin: 10px;
+  }
+</style>
