@@ -2,16 +2,34 @@
 <template>
   <div id="app">
     <controller></controller>
-    <router-view/>
+    <idea-list v-bind:ideas="ideas"></idea-list>
   </div>
 </template>
 
 <script>
 import Controller from '@/components/Controller'
-
+import IdeaList from '@/components/IdeaList'
 export default {
   name: 'App',
-  components: {'controller': Controller}
+  components: {
+    'controller': Controller,
+    'idea-list': IdeaList
+    },
+
+  data() {
+    return {
+      ideas: [
+        {
+          title: 'one',
+          idea: 'Do things'
+        },
+        {
+          title: 'two',
+          idea: 'do more things'
+        }
+      ]
+    }
+  }
 }
 </script>
 

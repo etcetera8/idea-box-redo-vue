@@ -1,14 +1,19 @@
 <template>
-  <section>
-    <ul>
-      <li>idea one</li>
-    </ul>
-  </section>
+  <div>
+    <section v-for="idea in ideas">
+      <div class="content">
+        <h4>{{idea.title}}</h4>
+        <p>{{idea.idea}}</p>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script type = "text/javascript" >
 
-export default {};
+export default {
+  props: ['ideas'],
+};
 
 </script>
 
@@ -16,9 +21,9 @@ export default {};
   section {
     background: rgba( 20, 20, 155, 0.4);
     color: white;
-    height: 250px;
-    width:350px;
-    margin: 0 auto;
+    height: 150px;
+    width:300px;
+    margin: 25px auto;
     text-align: center;
   }
 
@@ -28,6 +33,4 @@ export default {};
     list-style-type: none;
     text-align: center;
   }
-
-
 </style>
