@@ -2,7 +2,8 @@
   <div>
     <section v-for="idea in ideas">
       <div class="content">
-        <h4>{{idea.title}}</h4>
+        <span class="delete-btn" v-on:click="removeIdea(idea)"><i class="far fa-trash-alt"></i></span>
+        <h3>{{idea.title}}</h3>
         <p>{{idea.idea}}</p>
       </div>
     </section>
@@ -10,11 +11,15 @@
 </template>
 
 <script type = "text/javascript" >
-
-export default {
-  props: ['ideas'],
-};
-
+  export default {
+    props: ['ideas'],
+  
+    methods: {
+      removeIdea(idea){
+        this.$emit('remove-idea', idea)
+      }
+    }
+  };
 </script>
 
 <style>
@@ -32,5 +37,13 @@ export default {
     padding: 0;
     list-style-type: none;
     text-align: center;
+  }
+
+  h3 {
+  }
+
+  .delete-btn {
+    float: right;
+    margin: 10px;
   }
 </style>

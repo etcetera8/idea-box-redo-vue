@@ -3,7 +3,7 @@
   <div id="app">
     <top-header></top-header>
     <controller v-bind:add-idea="addIdea"></controller>
-    <idea-list v-bind:ideas="ideas"></idea-list>
+    <idea-list v-on:remove-idea="removeIdea" v-bind:ideas="ideas"></idea-list>
   </div>
 </template>
 
@@ -34,9 +34,16 @@
       }
     },
     methods: {
+
       addIdea(idea) {
         this.ideas.push(idea)
+      },
+
+      removeIdea(idea) {
+        const ideaIndex = this.ideas.indexOf(idea)
+        this.ideas.splice(ideaIndex, 1)
       }
+
     }
   }
 </script>
