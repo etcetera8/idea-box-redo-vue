@@ -8,44 +8,44 @@
 </template>
 
 <script>
-  import TopHeader from '@/components/TopHeader'
-  import Controller from '@/components/Controller'
-  import IdeaList from '@/components/IdeaList'
-  export default {
-    name: 'App',
-    components: {
-      'controller': Controller,
-      'idea-list': IdeaList,
-      'top-header': TopHeader
-      },
+import TopHeader from '@/components/TopHeader'
+import Controller from '@/components/Controller'
+import IdeaList from '@/components/IdeaList'
+export default {
+  name: 'App',
+  components: {
+    'controller': Controller,
+    'idea-list': IdeaList,
+    'top-header': TopHeader
+  },
 
-    data() {
-      return {
-        ideas: [
-          {
-            title: 'one',
-            idea: 'Do things'
-          },
-          {
-            title: 'two',
-            idea: 'do more things'
-          }
-        ]
-      }
-    },
-    methods: {
-
-      addIdea(idea) {
-        this.ideas.push(idea)
-      },
-
-      removeIdea(idea) {
-        const ideaIndex = this.ideas.indexOf(idea)
-        this.ideas.splice(ideaIndex, 1)
-      }
-
+  data () {
+    return {
+      ideas: [
+        {
+          title: 'one',
+          idea: 'Do things'
+        },
+        {
+          title: 'two',
+          idea: 'do more things'
+        }
+      ]
     }
+  },
+  methods: {
+
+    addIdea (idea) {
+      this.ideas.push(idea)
+    },
+
+    removeIdea (idea) {
+      const ideaIndex = this.ideas.indexOf(idea)
+      this.ideas.splice(ideaIndex, 1)
+    }
+
   }
+}
 </script>
 
 <style>

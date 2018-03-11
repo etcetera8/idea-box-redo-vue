@@ -10,14 +10,14 @@
 
 <script>
 export default {
-  data(){
+  data () {
     return {
       ideaTitle: '',
       ideaText: ''
     }
   },
   methods: {
-    sendForm(){
+    sendForm () {
       if (this.ideaTitle.length > 0 && this.ideaText.length > 0) {
         const {ideaTitle, ideaText} = this
         // this.$emit('create-idea', {
@@ -31,7 +31,7 @@ export default {
       }
     }
   },
-  props: ["addIdea"]
+  props: ['addIdea']
 }
 </script>
 

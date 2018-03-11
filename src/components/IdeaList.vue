@@ -11,15 +11,15 @@
 </template>
 
 <script type = "text/javascript" >
-  export default {
-    props: ['ideas'],
-  
-    methods: {
-      removeIdea(idea){
-        this.$emit('remove-idea', idea)
-      }
+export default {
+  props: ['ideas'],
+
+  methods: {
+    removeIdea (idea) {
+      this.$emit('remove-idea', idea)
     }
-  };
+  }
+}
 </script>
 
 <style>
