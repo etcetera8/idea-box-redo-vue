@@ -26,6 +26,7 @@
     margin-left: 30px;
     width: 9%;
     height: 9%;
+    min-width: 39px;
   }
 
   #vue {
