@@ -5,6 +5,9 @@
       <div class="content">
         <h3>Title: {{idea.title}}</h3>
         <p><span class="label">Main:</span> {{idea.idea}}</p>
+        <span>Status: {{idea.status}}</span>
+        <span class="vote"><i class="far fa-hand-point-up"></i></span>
+        <span class="vote"><i class="far fa-hand-point-down"></i></span>
       </div>
     </section>
   </div>
@@ -32,6 +35,15 @@ export default {
     padding: 5px;
     text-align: left;
     border-radius: 15px;
+  }
+
+  .vote {
+    margin-left: 5px;
+    transition: color .5s;
+  }
+
+  .vote:hover {
+    color: #48A49C;
   }
 
   .content {
@@ -64,5 +76,10 @@ export default {
   .delete-btn {
     float: right;
     margin: 10px;
+    transition: color .5s;
+  }
+
+  .delete-btn:hover {
+    color: rgb(255, 0, 0);
   }
 </style>

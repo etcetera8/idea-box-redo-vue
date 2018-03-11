@@ -24,11 +24,13 @@ export default {
       ideas: [
         {
           title: 'one',
-          idea: 'Do things'
+          idea: 'Do things',
+          status: 'fresh'
         },
         {
           title: 'two',
-          idea: 'do more things'
+          idea: 'do more things',
+          status: 'fresh'
         }
       ]
     }
