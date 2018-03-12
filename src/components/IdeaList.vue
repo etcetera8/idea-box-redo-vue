@@ -6,8 +6,8 @@
         <h3>Title: {{idea.title}}</h3>
         <p><span class="label">Main:</span> {{idea.idea}}</p>
         <span>Status: {{idea.status}}</span>
-        <span class="vote"><i class="far fa-hand-point-up"></i></span>
-        <span class="vote"><i class="far fa-hand-point-down"></i></span>
+        <span v-on:click="upvote(idea)" class="vote"><i class="far fa-hand-point-up"></i></span>
+        <span v-on:click="downvote(idea)"class="vote"><i class="far fa-hand-point-down"></i></span>
       </div>
     </section>
   </div>
@@ -20,6 +20,26 @@ export default {
   methods: {
     removeIdea (idea) {
       this.$emit('remove-idea', idea)
+    },
+
+    upvote(idea) {
+      switch (idea.status) {
+        case 'fresh':
+          idea.status = 'working'
+          break;
+        case 'working':
+          idea.status = 'stale'
+      }
+    },
+
+    downvote(idea) {
+      switch (idea.status) {
+        case 'stale':
+          idea.status = 'working'
+          break;
+        case 'working':
+          idea.status = 'fresh'
+      }
     }
   }
 }
