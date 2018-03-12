@@ -5,9 +5,13 @@
       <div class="content">
         <h3>Title: {{idea.title}}</h3>
         <p><span class="label">Main:</span> {{idea.idea}}</p>
-        <span>Status: {{idea.status}}</span>
-        <span v-on:click="upvote(idea)" class="vote"><i class="far fa-hand-point-up"></i></span>
-        <span v-on:click="downvote(idea)"class="vote"><i class="far fa-hand-point-down"></i></span>
+        <div class="voters">
+          <span class="status">Status: {{idea.status}}</span>
+          <div class="fingers">
+            <span v-on:click="upvote(idea)" class="vote"><i class="far fa-hand-point-up"></i></span>
+            <span v-on:click="downvote(idea)" class="vote"><i class="far fa-hand-point-down"></i></span>
+          </div>
+        </div>
       </div>
     </section>
   </div>
@@ -18,6 +22,7 @@ export default {
   props: ['ideas'],
 
   methods: {
+    
     removeIdea (idea) {
       this.$emit('remove-idea', idea)
     },
@@ -49,17 +54,32 @@ export default {
   section {
     background: rgba( 20, 20, 155, 0.4);
     color: white;
-    height: 150px;
+    height: 170px;
     width:300px;
     margin: 25px auto;
     padding: 5px;
     text-align: left;
     border-radius: 15px;
+    position: relative;
   }
 
   .vote {
-    margin-left: 5px;
+    margin-left: 15px;
     transition: color .5s;
+  }
+
+  .voters {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fingers {
+    margin-left: 34px;
+  }
+
+  .status {
+    float: left;
+    clear: both;
   }
 
   .vote:hover {

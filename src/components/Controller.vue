@@ -24,7 +24,7 @@ export default {
         //   titleText,
         //   ideaText
         // })
-        const idea = {title: ideaTitle, idea: ideaText}
+        const idea = {title: ideaTitle, idea: ideaText, status: 'fresh'}
         this.ideaTitle = ''
         this.ideaText = ''
         this.addIdea(idea)
