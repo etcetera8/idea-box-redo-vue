@@ -1,53 +1,46 @@
 <template>
   <div>
     <section v-for="idea in ideas">
-      <span class="delete-btn" v-on:click="removeIdea(idea)"><i class="far fa-trash-alt"></i></span>
-      <div class="content">
-        <h3>Title: {{idea.title}}</h3>
-        <p><span class="label">Main:</span> {{idea.idea}}</p>
-        <div class="voters">
-          <span class="status">Status: {{idea.status}}</span>
-          <div class="fingers">
-            <span v-on:click="upvote(idea)" class="vote"><i class="far fa-hand-point-up"></i></span>
-            <span v-on:click="downvote(idea)" class="vote"><i class="far fa-hand-point-down"></i></span>
-          </div>
-        </div>
-      </div>
+      <card v-bind="{idea, removeIdea, upvote, downvote}"/>
     </section>
   </div>
 </template>
 
 <script type = "text/javascript" >
-export default {
-  props: ['ideas'],
-
-  methods: {
-    
-    removeIdea (idea) {
-      this.$emit('remove-idea', idea)
+  import Card from '@/components/card'
+  export default {
+    name: 'IdeaList',
+    components: {
+      'card': Card
     },
+    props: ['ideas'],
 
-    upvote(idea) {
-      switch (idea.status) {
-        case 'fresh':
-          idea.status = 'working'
-          break;
-        case 'working':
-          idea.status = 'stale'
-      }
-    },
+    methods: {
+      removeIdea (idea) {
+        this.$emit('remove-idea', idea)
+      },
 
-    downvote(idea) {
-      switch (idea.status) {
-        case 'stale':
-          idea.status = 'working'
-          break;
-        case 'working':
-          idea.status = 'fresh'
+      upvote(idea) {
+        switch (idea.status) {
+          case 'fresh':
+            idea.status = 'working'
+            break;
+          case 'working':
+            idea.status = 'stale'
+        }
+      },
+
+      downvote(idea) {
+        switch (idea.status) {
+          case 'stale':
+            idea.status = 'working'
+            break;
+          case 'working':
+            idea.status = 'fresh'
+        }
       }
     }
   }
-}
 </script>
 
 <style>

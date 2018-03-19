@@ -1,4 +1,3 @@
-
 <template>
   <div id="app">
     <top-header></top-header>
